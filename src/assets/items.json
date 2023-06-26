@@ -1,0 +1,191 @@
+[
+  {
+   "id": "0",
+   "imageUrl": "https://korobok.store/upload/iblock/cf8/894wacgjgpoqvgfwn5cxxq39drybuqkd.jpg",
+   "title": "STAR WARS Jedi: Survivor",
+   "price": 69.99,
+   "category": 0,
+   "rating": 2.3,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "1",
+   "imageUrl": "https://korobok.store/upload/iblock/aed/lnf9d3iywidk0d3nvp1wkh15yps0b8gt.jpg",
+   "title": "Resident Evil 4 Remake",
+   "price": 59.99,
+   "category": 0,
+   "rating": 6.6,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "2",
+   "imageUrl": "https://assets-prd.ignimgs.com/2022/09/14/zelda-tears-of-the-kingdom-button-2k-1663127818777.jpg",
+   "title": "The Legend of Zelda: Tears of the Kingdom",
+   "price": 69.99,
+   "category": 1,
+   "rating": 9.1,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    5
+   ]
+  },
+  {
+   "id": "3",
+   "imageUrl": "https://korobok.store/upload/iblock/8db/nuxrrk6adzs1au6v19rofsi6c36eeear.webp",
+   "title": "God of War Ragnarök",
+   "price": 57,
+   "category": 2,
+   "rating": 7.9,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "4",
+   "imageUrl": "https://korobok.store/upload/iblock/b64/l6lzp422ekpzd5zyfa6nkn5yuvdmmh3d.webp",
+   "title": "ELDEN RING",
+   "price": 59.99,
+   "category": 3,
+   "rating": 6.9,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "5",
+   "imageUrl": "https://korobok.store/upload/iblock/440/s6xd5z3q9pz7dwje7ms8qk40jq01m134.webp",
+   "title": "Cyberpunk 2077",
+   "price": 59.99,
+   "category": 2,
+   "rating": 7,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "6",
+   "imageUrl": "https://korobok.store/upload/iblock/27b/x3gdalnw0cm9pn3cmp3ar52m16m9jy1s.webp",
+   "title": "Hogwarts Legacy",
+   "price": 59.99,
+   "category": 1,
+   "rating": 7.8,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "7",
+   "imageUrl": "https://korobok.store/upload/iblock/033/hnw8k05c7xgak1csuff8hqzcpj18nqpj.webp",
+   "title": "Dead Island 2",
+   "price": 69.99,
+   "category": 4,
+   "rating": 6.7,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "8",
+   "imageUrl": "https://korobok.store/upload/iblock/2c7/hujte51y5xc7dm3v7c35wrry280zx751.webp",
+   "title": "The Callisto Protocol",
+   "price": 59.99,
+   "category": 5,
+   "rating": 5.6,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "9",
+   "imageUrl": "https://assets-prd.ignimgs.com/2021/09/24/kirby-and-the-forgotten-land-button-fin-1632513789460.jpg",
+   "title": "Kirby and the Forgotten Land",
+   "price": 48.49,
+   "category": 5,
+   "rating": 8.8,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    5
+   ]
+  },
+  {
+   "id": "10",
+   "imageUrl": "https://korobok.store/upload/iblock/119/oz1m3lxy7i13gukb076fspxc3uqwwjun.webp",
+   "title": "Dead Space Remake",
+   "price": 59.99,
+   "category": 5,
+   "rating": 8.7,
+   "copies": [
+    0,
+    1
+   ],
+   "platforms": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ]
