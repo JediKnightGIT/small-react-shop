@@ -1,4 +1,9 @@
-export default function Platforms({ id, platformOnClick }) {
+type PlatformsProps = {
+  id: number;
+  platformOnClick: (platform: number) => void;
+}
+
+const Platforms: React.FC<PlatformsProps> = ({ id, platformOnClick }) => {
 
   const platforms = ['All', 'PS5', 'PS4', 'Xbox Series X|S', 'PC', 'Nintendo Switch']
 
@@ -19,3 +24,5 @@ export default function Platforms({ id, platformOnClick }) {
     </div>
   )
 }
+
+export default Platforms

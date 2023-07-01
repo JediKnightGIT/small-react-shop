@@ -1,9 +1,16 @@
 import { useState } from "react"
 
-export default function ItemCard({ title, price, imageUrl, platforms }) {
+type ItemCardProps = {
+  title: string;
+  price: number;
+  imageUrl: string;
+  platforms: string[]
+}
+
+const ItemCard: React.FC<ItemCardProps> = ({ title, price, imageUrl, platforms }) => {
   const [activeType, setActiveType] = useState(0)
 
-  const title2ImgLink = (title) => {
+  const title2ImgLink = (title: string) => {
     return `/assets/${title.split(' ').join('_').toLowerCase()}`
   }
 
@@ -19,7 +26,7 @@ export default function ItemCard({ title, price, imageUrl, platforms }) {
       <div className="item-card__selector">
         <ul>
           {
-            platforms.map((platform, i) =>
+            platforms.map((platform: string, i: number) =>
               <li
                 key={platform}
                 onClick={() => setActiveType(i)}
@@ -57,3 +64,5 @@ export default function ItemCard({ title, price, imageUrl, platforms }) {
     </div>
   )
 }
+
+export default ItemCard

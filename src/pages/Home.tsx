@@ -13,14 +13,19 @@ import { setPlatformId, setSort, setOrder, setPage, setFilter, filterSelector } 
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import { Pagination } from "../components/Pagination";
 
+export type SortItem = {
+  sortId: number,
+  name: string,
+  property: string
+}
 
-export const sortList = [
+export const sortList: SortItem[] = [
   { sortId: 0, name: 'popularity', property: "rating" },
   { sortId: 1, name: 'price', property: "price" },
   { sortId: 2, name: 'alphabet', property: "title" }
 ]
 
-export default function Home() {
+const Home: React.FC = () => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const isSearch = useRef(false)
@@ -69,7 +74,7 @@ export default function Home() {
 
     if (!isSearch.current && data) {
       setItems(() => {
-        return data.filter((item) => {
+        return data.filter((item: any) => {
           return platformId > 0
             ? item.platforms.indexOf(platformId) > -1
             : item
@@ -81,11 +86,11 @@ export default function Home() {
     isSearch.current = false;
   }, [platformId, search, page, data]);
 
-  const platformOnClick = (i) => {
+  const platformOnClick = (i: number) => {
     dispatch(setPlatformId(i))
   }
 
-  const sortOnClick = (obj) => {
+  const sortOnClick = (obj: any) => {
     dispatch(setSort(obj))
   }
 
@@ -93,7 +98,7 @@ export default function Home() {
     dispatch(setOrder())
   }
 
-  const pageOnChange = (currentPage) => {
+  const pageOnChange = (currentPage: number) => {
     dispatch(setPage(currentPage))
   }
 
@@ -106,7 +111,6 @@ export default function Home() {
         />
         <Sort
           sort={sort}
-          sortList={sortList}
           order={order}
           sortOnClick={sortOnClick}
           orderOnClick={orderOnClick}
@@ -135,7 +139,7 @@ export default function Home() {
                 key={i}
               />
             ))
-            : items.map((item) => (
+            : items.map((item: any) => (
               <Link to={`/game/${item.id}`} key={item.id}>
                 <ItemCard
                   {...item}
@@ -150,3 +154,4 @@ export default function Home() {
   )
 }
 
+export default Home

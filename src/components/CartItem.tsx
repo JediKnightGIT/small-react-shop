@@ -1,10 +1,18 @@
 import React from 'react'
 
-import { platformList } from '../components/ItemCard'
+import { platformList } from './ItemCard'
 import { useAppDispatch } from '../redux/hooks'
 import { addItem, minusItem, removeItem, round } from '../redux/slices/cart-slice'
 
-const CartItem = (item) => {
+type CartItemProps = {
+  imageUrl: string,
+  title: string,
+  platform: number,
+  count: number,
+  price: number
+}
+
+const CartItem: React.FC<CartItemProps> = (item) => {
   const dispatch = useAppDispatch()
 
   const onMinusItemClick = () => {

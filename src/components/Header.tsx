@@ -3,9 +3,10 @@ import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/img/logo.svg'
 import Search from './Search'
 import { useAppSelector } from '../redux/hooks'
+import { cartSelector } from '../redux/slices/cart-slice'
 
-export default function Header() {
-  const { totalPrice, count } = useAppSelector((state) => state.cart)
+const Header: React.FC = () => {
+  const { totalPrice, count } = useAppSelector(cartSelector)
   const location = useLocation()
 
   return (
@@ -60,3 +61,4 @@ export default function Header() {
     </div>
   )
 }
+export default Header

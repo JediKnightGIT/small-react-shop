@@ -7,10 +7,10 @@ import searchIcon from '../../assets/img/search-icon.svg'
 import { useAppDispatch } from '../../redux/hooks'
 import { setSearch } from '../../redux/slices/filter-slice'
 
-export default function Search() {
+const Search: React.FC = () => {
   const dispatch = useAppDispatch()
   const [value, setValue] = useState('')
-  const inputRef = useRef()
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const onClearClick = () => {
     dispatch(setSearch(''))
@@ -19,13 +19,13 @@ export default function Search() {
   }
 
   const updateSearchValue = useMemo(
-    () => debounce((str) => {
+    () => debounce((str: string) => {
       dispatch(setSearch(str));
     }, 1000),
     [dispatch],
   );
 
-  const onChangeSearch = (e) => {
+  const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
     updateSearchValue(e.target.value)
   }
@@ -38,3 +38,5 @@ export default function Search() {
     </div>
   )
 }
+
+export default Search

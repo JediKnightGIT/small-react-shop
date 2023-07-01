@@ -1,31 +1,39 @@
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
+import { sortList } from "../pages/Home"
 
-export default function Sort({ sort, sortList, order, sortOnClick, orderOnClick}) {
+type CategoriesProps = {
+  sort: any;
+  order: string;
+  sortOnClick: (obj: any) => void;
+  orderOnClick: () => void;
+}
+
+const Sort: React.FC<CategoriesProps> = ({ sort, order, sortOnClick, orderOnClick}) => {
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState(sort.sortId)
 
-  const sortRef = useRef()
+  const sortRef = useRef<HTMLDivElement>(null)
 
-  const handleSortOnClick = (obj, i) => {
+  const handleSortOnClick = (obj: any, i: number) => {
     sortOnClick(obj)
     setSelected(i)
     setOpen(false)
   }
 
   useEffect(() => {
-    const handleSortClickOutside = (event) => {
-      if (!event.composedPath().includes(sortRef.current)) {
+    const handleSortClickOutside = (event: MouseEvent) => {
+      if (sortRef.current && !event.composedPath().includes(sortRef.current)) {
         setOpen(false)
       }
     }
 
     document.body.addEventListener('click', handleSortClickOutside)
-  
+
     return () => {
       document.body.removeEventListener('click', handleSortClickOutside)
     }
   }, [])
-  
+
   return (
     <div ref={sortRef} className="sort">
       <div className="sort__label">
@@ -50,7 +58,7 @@ export default function Sort({ sort, sortList, order, sortOnClick, orderOnClick}
         <div className="sort__popup">
           <ul>
             {
-              sortList.map((obj, i) =>
+              sortList.map((obj: any, i: number) =>
                 <li
                   key={i}
                   onClick={() => handleSortOnClick(obj, i)}
@@ -64,3 +72,5 @@ export default function Sort({ sort, sortList, order, sortOnClick, orderOnClick}
     </div>
   )
 }
+
+export default Sort

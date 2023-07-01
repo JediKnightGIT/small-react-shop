@@ -5,20 +5,28 @@ import { addItem, cartItemSelector } from "../../redux/slices/cart-slice"
 
 export const platformList = ['All', 'PS5', 'PS4', 'Xbox', 'PC', 'Nintendo Switch']
 
-export default function ItemCard({ id, title, price, imageUrl, platforms }) {
+type ItemCardProps = {
+  id: number,
+  title: string,
+  price: number,
+  imageUrl: string,
+  platforms: number[]
+}
+
+const ItemCard: React.FC<ItemCardProps> = ({ id, title, price, imageUrl, platforms }) => {
   const dispatch = useAppDispatch()
   const cartItem = useAppSelector(cartItemSelector(id))
   const [activeType, setActiveType] = useState(0)
 
-  const title2ImgUrl = (title) => {
+  const title2ImgUrl = (title: string) => {
     return `/img/items/${title.split(/[\s:]+/).join('_').toLowerCase()}.webp`
   }
 
   const addedCount = cartItem
-    ? cartItem.map(item => item.count).reduce((sum, count) => count + sum, 0)
+    ? cartItem.map((item: any) => item.count).reduce((sum: number, count: number) => count + sum, 0)
     : 0
 
-  const onAddItemClick = (e) => {
+  const onAddItemClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const item = {
       id,
@@ -31,14 +39,15 @@ export default function ItemCard({ id, title, price, imageUrl, platforms }) {
     dispatch(addItem(item))
   }
 
-  const onTypeClick = (index, e) => {
+  const onTypeClick = (index: number, e: React.MouseEvent<HTMLLIElement>) => {
     e.preventDefault()
     setActiveType(index)
   }
 
-  const imageOnError = (e) => {
-    e.target.onError = null;
-    e.target.src = title2ImgUrl(title)
+  const imageOnError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.target as HTMLImageElement;
+    target.onerror = null;
+    target.src = title2ImgUrl(title)
   }
 
   return (
@@ -64,11 +73,6 @@ export default function ItemCard({ id, title, price, imageUrl, platforms }) {
             )
           }
         </ul>
-        {/* <ul>
-          {
-            sizes.map((size, i) => <li key={size} onClick={() => setActiveSize(i)} className={activeSize === i ? 'active' : ''}>{size} см.</li>)
-          }
-        </ul> */}
       </div>
       <div className="item-card__bottom">
         <div className="item-card__price">${price}</div>
@@ -92,3 +96,5 @@ export default function ItemCard({ id, title, price, imageUrl, platforms }) {
     </div>
   )
 }
+
+export default ItemCard

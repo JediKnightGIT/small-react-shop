@@ -1,5 +1,11 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 
+// interface CartSliceState {
+//   items:
+//   count: number;
+//   totalPrice: number;
+// }
+
 const initialState = {
   items: [],
   count: 0,

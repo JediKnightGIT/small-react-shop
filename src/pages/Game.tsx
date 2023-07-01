@@ -3,7 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 import { useItemQuery } from '../redux/slices/items-slice'
 
-const Game = () => {
+
+const Game: React.FC = () => {
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -14,7 +15,10 @@ const Game = () => {
     navigate('/')
   }
 
-  if (data) {
+  if (!data) {
+    return <>Loading...</>
+  }
+
     return (
       <div className="container">
         <h2>{data.title}</h2>
@@ -23,7 +27,6 @@ const Game = () => {
         <img src={data.imageUrl} alt={data.title} />
       </div>
     )
-  }
 }
 
 export default Game

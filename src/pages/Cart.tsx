@@ -6,7 +6,7 @@ import EmptyCart from '../components/EmptyCart'
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { cartSelector, clearItems } from '../redux/slices/cart-slice'
 
-export const Cart = () => {
+export const Cart: React.FC = () => {
   const dispatch = useAppDispatch()
   const { items, count, totalPrice } = useAppSelector(cartSelector)
 
@@ -41,7 +41,7 @@ export const Cart = () => {
         </div>
         <div className="content__items">
           {
-            items.map((item) => item.count > 0 && <CartItem key={`${item.id}-${item.platform}`} {...item} />)
+            items.map((item: any) => item.count > 0 && <CartItem key={`${item.id}-${item.platform}`} {...item} />)
           }
 
         </div>
